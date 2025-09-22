@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { CounterPageComponent } from './components/counter/counter-page.component';
+import { UsuarioComponent } from './components/usuario/usuario.component';
 
 export const routes: Routes = [
     {
@@ -7,7 +8,11 @@ export const routes: Routes = [
         component: CounterPageComponent
     },
     {
+        path: 'usuario',
+        component: UsuarioComponent
+    },
+    {
         path: '**',
-        redirectTo: 'counter'
+        redirectTo: 'usuario'
     }
 ];
