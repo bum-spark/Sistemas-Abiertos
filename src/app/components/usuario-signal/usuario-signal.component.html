@@ -1,0 +1,35 @@
+<h3>Nombre: <br> {{nombre()}}</h3> <button (click)="showModal('nombre')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Editar nombre
+</button>
+<br>
+<br>
+<h3>Edad: <br> {{edad()}}</h3> <button (click)="showModal('edad')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Editar edad
+</button>
+<br>
+<br>
+<h3>Nombre capitalizado: <br> {{nombreCapitalizado()}}</h3>
+
+ <button (click)="showModal('nombreCapitalizado')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Reset
+</button>
+
+
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Editar {{datoEditar()}}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Ingrese el nuevo dato de {{datoEditar()}}</p>
+        <input [type]="datoEditar.toString() === 'edad' ? 'number' : 'text'" [(ngModel)]="datoNuevo">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button (click)="cambiarDato()" type="button" data-bs-dismiss="modal" class="btn btn-primary">Guardar cambios</button>
+      </div>
+    </div>
+  </div>
+</div>
