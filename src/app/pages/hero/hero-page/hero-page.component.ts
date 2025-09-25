@@ -1,9 +1,11 @@
-import { Component } from '@angular/core';
+import { UpperCasePipe } from '@angular/common';
+import { Component, computed } from '@angular/core';
 import { signal } from '@angular/core';
+
 
 @Component({
   selector: 'app-hero-page',
-  imports: [],
+  imports: [UpperCasePipe],
   templateUrl: './hero-page.component.html',
   styleUrl: './hero-page.component.css'
 })
@@ -30,8 +32,9 @@ export class HeroPageComponent {
     this.age.set(60);
   }
 
-  getNombreCapitalizado(){
-    return this.name().toUpperCase();
+  HeroDescription = computed(() => {
+    const description = `${this.name()} - ${this.age()}`;
+    return description;
   }
 
 }
