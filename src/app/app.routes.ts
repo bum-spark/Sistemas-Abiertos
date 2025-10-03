@@ -3,6 +3,7 @@ import { CounterPageComponent } from './components/counter/counter-page.componen
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { UsuarioSignalComponent } from './components/usuario-signal/usuario-signal.component';
 import { HeroPageComponent } from './pages/hero/hero-page/hero-page.component';
+import { DragonballSuperComponent } from './dragonball-super/dragonball-super.component';
 
 export const routes: Routes = [
     {
@@ -22,7 +23,11 @@ export const routes: Routes = [
         component: HeroPageComponent
     },
     {
+        path: 'dragonball-super',
+        component: DragonballSuperComponent
+    },
+    {
         path: '**',
-        redirectTo: 'hero'
+        redirectTo: 'counter'
     }
 ];
